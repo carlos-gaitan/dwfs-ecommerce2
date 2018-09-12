@@ -41,7 +41,7 @@ Modelo.prototype = {
     var listaExtraida = localStorage.getItem('listaGuardada');
     if(listaExtraida == null){
       this.wishList = [];
-      this.listaExtraida.notificar(this.wishList);  
+      this.listaExtraida.notificar(this.wishList);
     } else{
       this.wishList = JSON.parse(listaExtraida);
       this.listaExtraida.notificar(this.wishList);
@@ -51,10 +51,10 @@ Modelo.prototype = {
   //Se guarda el carrito en el local storage
   guardarCarrito: function(){
     var carrito=JSON.stringify(this.carrito);
-    localStorage.setItem('carrito', carrito);  
+    localStorage.setItem('carrito', carrito);
   },
 
-  //Se extrae el carrito del localStorage, si no existia, se setea en vacio  
+  //Se extrae el carrito del localStorage, si no existia, se setea en vacio
   cargarCarrito: function(){
     var carrito = localStorage.getItem('carrito');
     if (carrito == null) {
@@ -108,4 +108,20 @@ Modelo.prototype = {
     //Se crea esta funcion para poder acceder a la wishList desde afuera del modelo
     return this.wishList;
   }
+
+  // ejemplo de jquery ajax
+  // $.ajax({
+  //   method:"POST",
+  //   url: "";
+  //   data: {email:"", password:""},
+  // })
+  // .done(function(body){
+  //   console.log(body);
+  // }),
+
+//   $.ajax({
+//   method: "GET",
+//   url: "http://ecommerce.casu-net.com.ar/api/products",
+//   dataType: "script"
+// });
 };
